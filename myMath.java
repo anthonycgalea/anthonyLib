@@ -22,6 +22,38 @@ public class myMath {
         return Math.sqrt(average(differences));
     }
 
+    public static double findMin(Double[] numbers) {
+        double min;
+        if (numbers.length > 0) {
+        min = numbers[0];
+        for (double number : numbers) {
+            if (number < min) {
+                min = number;
+                }
+            }
+        }
+        else {
+            min = 0;
+        }   
+        return min;
+    }
+
+    public static double findMax(Double[] numbers) {
+        double max;
+        if (numbers.length > 0) {
+        max = numbers[0];
+        for (double number : numbers) {
+            if (number > max) {
+                max = number;
+                }
+            }
+        }
+        else {
+            max = 0;
+        }   
+        return max;
+    }
+
     public static void main(String[] args) {
         Double[] numbers = new Double[5];
         numbers[0] = 3.0;
@@ -31,9 +63,13 @@ public class myMath {
         numbers[4] = 6.0;
         double ave = average(numbers);
         double std = stdDev(numbers);
+        double min = findMin(numbers);
+        double max = findMax(numbers);
         System.out.println("Testing Functions:");
         System.out.println("Average:\t\t" + ave + "");
         System.out.println("Standard Deviation:\t" + std + "");
+        System.out.println("Minimum:\t\t" + min + "");
+        System.out.println("Maximum:\t\t" + max + "");
         return;
     }
 
