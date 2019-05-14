@@ -3,9 +3,9 @@ This is a Library that I am making to put custom commands in, to help myself wit
 
 MyMath contains the following functions:<br />
 <ul>
-<li>average(Double[]): finds the average of an array of doubles, returns a double </li>
-<li>variance(Double[]): finds the variance of an array of doubles, returns a double</li>
-<li>stdDev(Double[]): finds the standard deviation of an array of doubles, returns a double </li>
-<li>findMin(Double[]): finds the minimum in an array of doubles, returns a double </li>
-<li>findMax(Double[]): finds the maximum in an array of doubles, returns a double </li>
+<li>average(ArrayList): finds the average of an arraylist of doubles, returns a double </li>
+<li>variance(ArrayList): finds the variance of an arraylist of doubles, returns a double</li>
+<li>stdDev(ArrayList): finds the standard deviation of an arraylist of doubles, returns a double </li>
+<li>findMin(ArrayList): finds the minimum in an arraylist of doubles, returns a double </li>
+<li>findMax(ArrayList): finds the maximum in an arraylist of doubles, returns a double </li>
 </ul>
