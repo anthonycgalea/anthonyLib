@@ -1,6 +1,7 @@
-import math;
-
-public static void main(String[] args) {
-
-    print("Hello world!");
+public class Test {
+    public static void main(String[] args) {
+        int test = 2;
+        System.out.println("Hello world!");
+        System.out.println(test);
+    }
 }
