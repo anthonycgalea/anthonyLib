@@ -1,8 +1,8 @@
-import java.util.ArrayList;
 import java.lang.Math;
+import java.util.ArrayList;
 public class myMath {
 
-    public static double average(Double[] numbers) {
+    public static double average(ArrayList<Double> numbers) {
         double av = 0;
         int i = 0;
         for (double num : numbers) {
@@ -13,23 +13,23 @@ public class myMath {
         return av;
     }
 
-    public static double variance(Double[] numbers) {
+    public static double variance(ArrayList<Double> numbers) {
         double mean = average(numbers);
-        Double differences[] = new Double[numbers.length];
-        for (int i = 0; i < numbers.length; i++) {
-            differences[i] = (mean - numbers[i])*(mean-numbers[i]);
+        ArrayList<Double> differences = new ArrayList<Double>();
+        for (int i = 0; i < numbers.size(); i++) {
+            differences.add(mean - numbers.get(i)*(mean-numbers.get(i)));
         }
         return average(differences);
     }
 
-    public static double stdDev(Double[] numbers) {
+    public static double stdDev(ArrayList<Double> numbers) {
         return Math.sqrt(variance(numbers));
     }
 
-    public static double findMin(Double[] numbers) {
+    public static double findMin(ArrayList<Double> numbers) {
         double min;
-        if (numbers.length > 0) {
-        min = numbers[0];
+        if (numbers.size() > 0) {
+        min = numbers.get(0);
         for (double number : numbers) {
             if (number < min) {
                 min = number;
@@ -42,10 +42,10 @@ public class myMath {
         return min;
     }
 
-    public static double findMax(Double[] numbers) {
+    public static double findMax(ArrayList<Double> numbers) {
         double max;
-        if (numbers.length > 0) {
-        max = numbers[0];
+        if (numbers.size() > 0) {
+        max = numbers.get(0);
         for (double number : numbers) {
             if (number > max) {
                 max = number;
@@ -59,12 +59,12 @@ public class myMath {
     }
 
     public static void main(String[] args) {
-        Double[] numbers = new Double[5];
-        numbers[0] = 3.0;
-        numbers[1] = 5.0;
-        numbers[2] = 1.0;
-        numbers[3] = 0.0;
-        numbers[4] = 6.0;
+        ArrayList<Double> numbers = new ArrayList<Double>();
+        numbers.add(3.0);
+        numbers.add(5.0);
+        numbers.add(1.0);
+        numbers.add(0.0);
+        numbers.add(6.0);
         double ave = average(numbers);
         double std = stdDev(numbers);
         double vari = variance(numbers);
