@@ -13,13 +13,17 @@ public class myMath {
         return av;
     }
 
-    public static double stdDev(Double[] numbers) {
+    public static double variance(Double[] numbers) {
         double mean = average(numbers);
         Double differences[] = new Double[numbers.length];
         for (int i = 0; i < numbers.length; i++) {
             differences[i] = (mean - numbers[i])*(mean-numbers[i]);
         }
-        return Math.sqrt(average(differences));
+        return average(differences);
+    }
+
+    public static double stdDev(Double[] numbers) {
+        return Math.sqrt(variance(numbers));
     }
 
     public static double findMin(Double[] numbers) {
@@ -63,10 +67,12 @@ public class myMath {
         numbers[4] = 6.0;
         double ave = average(numbers);
         double std = stdDev(numbers);
+        double vari = variance(numbers);
         double min = findMin(numbers);
         double max = findMax(numbers);
         System.out.println("Testing Functions:");
         System.out.println("Average:\t\t" + ave + "");
+        System.out.println("Variance:\t\t" + vari + "");
         System.out.println("Standard Deviation:\t" + std + "");
         System.out.println("Minimum:\t\t" + min + "");
         System.out.println("Maximum:\t\t" + max + "");
